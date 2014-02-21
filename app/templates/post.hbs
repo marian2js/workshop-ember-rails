@@ -1,5 +1,31 @@
 <div class="contentor">
   <h1>{{ this.title }}</h1>
   <hr>
-  {{ this.content }}
+  {{ this.question }}
+  <hr>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Comments</h3>
+    </div>
+    <div class="panel-body">
+      <ul class="list-group">
+        {{#each comment in this.comments }}
+          <li class="list-group-item"><h4>{{ comment.author }}:</h4> {{ comment.body }}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Add Comment</h3>
+    </div>
+    <div class="panel-body">
+      {{input valueBinding="a" class="form-control" placeholder="Insert your name"}}
+      {{textarea valueBinding="body" class="form-control" placeholder="Insert your comment here..."}}
+      {{input valueBinding="model.id" type="hidden"}}
+      <div class="panel-footer">
+        <button {{action postComment target="controller"}} class="btn btn-primary">Send</button>
+      </div>
+    </div>
+  </div>
 </div>

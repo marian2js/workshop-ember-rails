@@ -1,30 +1,10 @@
 import Post from 'appkit/models/post';
+import Comment from 'appkit/models/comment';
 
 export default Ember.Route.extend({
-
-    model: function(params) {
-        return fakePosts[parseInt(params.post_id) - 1];
-    }
+  model: function(params) {
+    var postId = parseInt(params.post_id);
+    this.set('post_id', postId);
+    return Post.findById(postId);
+  }
 });
-
-var fakePosts = [{
-    id: 1,
-    title: 'Question 1',
-    content: 'Content 1'
-}, {
-    id: 2,
-    title: 'Question 2',
-    content: 'Content 2'
-}, {
-    id: 3,
-    title: 'Question 3',
-    content: 'Content 3'
-}, {
-    id: 4,
-    title: 'Question 4',
-    content: 'Content 4'
-}, {
-    id: 5,
-    title: 'Question 5',
-    content: 'Content 5'
-}];

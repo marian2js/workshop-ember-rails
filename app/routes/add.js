@@ -1,8 +1,7 @@
 import Post from 'appkit/models/post';
 
 export default Ember.Route.extend({
-
-    model: function(params) {
-        return Post.create();
-    }
+  model: function() {
+    return Post.create();
+  }
 });

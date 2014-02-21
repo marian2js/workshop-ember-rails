@@ -6,7 +6,7 @@
     </div>
     <div class="form-group">
       <label>Question</label>
-      {{input type="text" class="form-control" valueBinding="model.content" placeholder="What you want to know?"}}
+      {{input type="text" class="form-control" valueBinding="model.question" placeholder="What you want to know?"}}
     </div>
     <button {{action submitAction target="controller"}} class="btn btn-primary">Send Question</button>
     {{#link-to 'index'}}
