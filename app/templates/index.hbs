@@ -1,0 +1,18 @@
+<div class="row">
+  {{#link-to 'add'}} Add New Post {{/link-to}}
+</div>
+<hr>
+
+<div class="row">
+  <div class="col-md-6">
+    <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
+      {{#each}}
+      <li>
+        {{#link-to 'post' this.id}}
+          {{ this.title }}
+        {{/link-to}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
